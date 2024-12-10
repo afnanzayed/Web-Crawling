@@ -46,3 +46,24 @@ The project relies on two main files:
 - **User-Friendly**: Simple setup and intuitive interface for end-users.
 
 ---
+
+## Challenges and Solutions
+
+### 1. Pagination
+- **Challenge:** Handling multiple pages of articles during crawling.
+- **Solution:** Implemented a loop to navigate through pages using dynamic URL patterns and verified the extracted data at each step to ensure accuracy.
+
+### 2. Dynamic Content (Emails)
+- **Challenge:** Extracting email addresses loaded dynamically using JavaScript.
+- **Solution:** Used Selenium with a regular expression to locate and extract emails after the page was fully rendered by the browser.
+
+### 3. Vector Database Integration
+- **Challenge:** Storing and retrieving embeddings in the vector database (Qdrant) for semantic search.
+- **Solution:**
+  - Generated embeddings using Hugging Face Transformers.
+  - Adjusted vector dimensions to match the database requirements.
+  - Stored and retrieved data effectively with Qdrant's APIs.
+
+#### 4. **OpenAI API Limitation**
+- **Challenge:** Due to time constraints and API limitations (rate limits), using OpenAI embeddings was not feasible.
+- **Solution:** Switched to Hugging Face Transformers as a suitable alternative. While the solution is appropriate, its accuracy for semantic similarity tasks may not be fully optimal.
